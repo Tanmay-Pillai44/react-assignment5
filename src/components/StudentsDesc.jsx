@@ -3,7 +3,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import './../App.css';
-import { StudentsContext } from './../App';
+import { ContextData } from "./StudentsContext";
 
 const StudentsDesc = () => {
 
@@ -12,7 +12,7 @@ const StudentsDesc = () => {
 
     const [btnText, setBtnText] = useState('Submit');
 
-    const [students, setStudents] = useContext(StudentsContext);
+    const [students, setStudents] = useContext(ContextData);
 
     const [details, setDetails] = useState({
         name: "",
