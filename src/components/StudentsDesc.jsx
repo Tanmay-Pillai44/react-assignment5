@@ -46,7 +46,7 @@ const StudentsDesc = () => {
             let newDetails = {...details, id: new Date().getTime().toString()};
             setStudents([...students, newDetails]);
         } else {
-            setStudents((previousState) => {
+            setStudents((previousState) =>
                 previousState.map((student) =>
                     student.id === id ? {
                         id: id,
@@ -57,7 +57,7 @@ const StudentsDesc = () => {
                     }
                     : student
                 )
-            })
+            )
         }
         navigate("/students");
     }

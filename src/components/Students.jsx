@@ -21,35 +21,35 @@ const Students = () => {
             </div>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Name</TableCell>
-                            <TableCell align="right">Age</TableCell>
-                            <TableCell align="right">Course</TableCell>
-                            <TableCell align="right">Batch</TableCell>
-                            <TableCell align="right">Change</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
+                <TableHead>
+                    <TableRow>
+                        <TableCell>Name</TableCell>
+                        <TableCell align="right">Age</TableCell>
+                        <TableCell align="right">Course</TableCell>
+                        <TableCell align="right">Batch</TableCell>
+                        <TableCell align="right">Change</TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
                     {students.map((student) => (
-                        <TableRow
+                    <TableRow
                         key={student.id}
-                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        >
-                            <TableCell component="th" scope="row">
-                                {student.name}
-                            </TableCell>
-                            <TableCell align="right">{student.age}</TableCell>
-                            <TableCell align="right">{student.course}</TableCell>
-                            <TableCell align="right">{student.batch}</TableCell>
-                            <TableCell align="right">
-                                {
-                                    <Link to={`/students-desc/${student.id}`}>Edit</Link>
-                                }
-                            </TableCell>
-                        </TableRow>
+                        sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                    >
+                        <TableCell component="th" scope="student">
+                        {student.name}
+                        </TableCell>
+                        <TableCell align="right">{student.age}</TableCell>
+                        <TableCell align="right">{student.course}</TableCell>
+                        <TableCell align="right">{student.batch}</TableCell>
+                        <TableCell align="right">
+                        {
+                            <Link to={`/students-desc/${student.id}`}>Edit</Link>
+                        }
+                        </TableCell>
+                    </TableRow>
                     ))}
-                    </TableBody>
+                </TableBody>
                 </Table>
             </TableContainer>
         </div>
